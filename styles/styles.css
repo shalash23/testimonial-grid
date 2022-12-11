@@ -36,8 +36,8 @@ main {
 }
 main .grid {
   padding: 1em 2em;
-  border-radius: 8px;
-  box-shadow: 0 0.2px 8px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0.2px 12px rgba(0, 0, 0, 0.4);
 }
 main .grid:nth-of-type(1) {
   background-color: hsl(263deg, 55%, 52%);
@@ -48,23 +48,26 @@ main .grid:nth-of-type(1) {
 main .grid:nth-of-type(2) {
   background-color: hsl(217deg, 19%, 35%);
 }
-main .grid:nth-of-type(3) {
+main .grid:nth-of-type(3), main .grid:nth-of-type(5) {
   color: hsl(219deg, 29%, 14%);
 }
-main .grid:nth-of-type(3) h2 {
+main .grid:nth-of-type(3) h2, main .grid:nth-of-type(5) h2 {
   color: hsl(217deg, 19%, 35%);
 }
-main .grid:nth-of-type(3) p {
+main .grid:nth-of-type(3) p, main .grid:nth-of-type(5) p {
   color: hsl(217deg, 19%, 35%);
   opacity: 0.5;
 }
-main .grid:nth-of-type(3) .name {
+main .grid:nth-of-type(3) .name, main .grid:nth-of-type(5) .name {
   color: hsl(217deg, 19%, 35%);
   opacity: 1;
 }
-main .grid:nth-of-type(3) .comment {
+main .grid:nth-of-type(3) .comment, main .grid:nth-of-type(5) .comment {
   color: hsl(217deg, 19%, 35%);
   opacity: 0.7;
+}
+main .grid:nth-of-type(4) {
+  background-color: hsl(219deg, 29%, 14%);
 }
 main .grid .info {
   display: flex;
@@ -93,4 +96,25 @@ footer .attribution {
 }
 footer .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+@media screen and (min-width: 1200px) {
+  p {
+    line-height: 1.2;
+  }
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+  }
+  main .grid:nth-of-type(1) {
+    grid-column: 1/span 2;
+  }
+  main .grid:nth-of-type(5) {
+    grid-column: 4;
+    grid-row: 1/span 2;
+  }
+  main .grid:nth-of-type(4) {
+    grid-column: span 2;
+  }
 }/*# sourceMappingURL=styles.css.map */
